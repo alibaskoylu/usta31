@@ -1,95 +1,53 @@
 
-/* ===== Bila Tarım — Catalog Theme (drop‑in, non-breaking) ===== */
-
-/* Base reset & typography */
+/* ===== Bila Tarım — Corporate Premium Catalog (V2-A) ===== */
 :root{
-  --brand:#1A635A;
-  --brand-2:#145149;
-  --ink:#0e1a17;
-  --paper:#f7faf9;
-  --card: #ffffff;
-  --muted:#5a6d67;
-  --ring: rgba(26,99,90,0.3);
+  --brand:#0F5E55; --brand-2:#0B4942;
+  --ink:#0E1A17; --ink-2:#2E3A36;
+  --paper:#F7FAF9; --line:#E3EEE9; --muted:#6A7A75; --ring:rgba(15,94,85,.25);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{
-  font-family: 'Poppins', 'Inter', system-ui, -apple-system, Arial, sans-serif;
-  color:#132521; background: linear-gradient(160deg,#f2f7f5,#e8f3f1);
-}
-
-/* Header (glass bar) */
-.bila-header{
-  position:sticky; top:0; z-index:1000;
-  display:flex; align-items:center; gap:16px; justify-content:space-between;
-  padding:14px 18px; backdrop-filter:saturate(160%) blur(12px);
-  background: rgba(20, 70, 63, .12);
-  border-bottom:1px solid rgba(26,99,90, .25);
-  box-shadow: 0 10px 24px rgba(0,0,0,.06);
-}
-.bila-brand{display:flex; align-items:center; gap:10px}
-.bila-brand img{height:42px; width:auto; object-fit:contain}
-.bila-title{font-weight:700; letter-spacing:.3px; color:#0f1f1b}
-.bila-actions{display:flex; align-items:center; gap:10px}
-
-/* Search */
-.bila-search{
-  position:relative; flex:1; max-width:600px; margin:0 16px;
-}
-.bila-search input{
-  width:100%; padding:12px 40px 12px 44px; border-radius:12px; border:1px solid #cfe5df;
-  outline: none; font-size:15px; background:#fff; color:#123; transition: box-shadow .2s, border-color .2s;
-}
-.bila-search input:focus{ border-color: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
-.bila-search .icon{
-  position:absolute; left:14px; top:0; bottom:0; display:flex; align-items:center; pointer-events:none;
-}
-.bila-btn{
-  display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px;
-  border:1px solid rgba(0,0,0,.06); background:#fff; color:#123; font-weight:600; text-decoration:none;
-  transition: transform .15s, box-shadow .2s, background .2s;
-}
-.bila-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,0,0,.08); }
-.bila-btn--primary{ background: var(--brand); color:#fff; border-color: rgba(26,99,90,.8); }
-.bila-btn--primary:hover{ filter: brightness(1.05); }
-
-/* Content frame */
-.bila-frame{ max-width:1200px; margin:22px auto; padding:0 16px; }
-#dynamic-content{ margin-top:16px; }
-
-/* Category header */
-.kategori-header{
-  background:linear-gradient(180deg,#fff, #f6fbfa) !important;
-  border:1px solid #e0efeb !important; color:#10332f !important; border-radius:12px !important;
-  padding:12px 16px !important; font-weight:700 !important; letter-spacing:.2px;
-  box-shadow: 0 8px 18px rgba(0,0,0,.05) !important;
-}
-.kategori-header .ok{ color: var(--brand) !important; font-weight:800; }
-
-/* Product grid & card (class names already used by index.js) */
-.urunler{
-  display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:18px;
-}
-.urun{
-  background:#fff !important; border:1px solid #e8efed !important; border-radius:14px !important;
-  box-shadow: 0 10px 18px rgba(0,0,0,.06) !important; padding:10px !important; cursor:pointer;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.urun:hover{ transform: translateY(-4px); border-color:#cfe5df !important; box-shadow: 0 16px 26px rgba(0,0,0,.08) !important; }
-.urun img{ width:100%; height:180px; object-fit:contain; border-radius:10px; background:#fafafa; }
-.urun p{ color:#0f1f1b !important }
-.urun p:nth-of-type(2){ color:#5c6f69 !important }
-.urun p:nth-of-type(3){ color:var(--brand) !important; font-weight:700 !important; }
-
-/* Product modal override (from index.js) */
-#product-modal-root > div > div{ background:#fff !important; }
-#product-modal-root h2{ color:#0f1f1b }
-#product-modal-root h4{ color:#536763 }
-
-/* Responsiveness */
-@media (max-width: 768px){
-  .bila-title{ display:none }
-  .bila-search{ max-width:none; }
-  .bila-btn{ padding:9px 12px }
-  .urun img{ height:150px }
-}
+body{font-family:'Inter','Poppins',system-ui,-apple-system,Arial,sans-serif;color:var(--ink);
+     background:linear-gradient(180deg,#F9FBFA 0%, #F2F7F5 100%);}
+.bila-header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:10px 18px;background:#FFFFFFF2;backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid var(--line);}
+.bila-brand{display:flex;align-items:center;gap:10px}
+.bila-brand img{height:36px;width:auto;object-fit:contain}
+.bila-title{font-weight:700;color:var(--ink);letter-spacing:.2px;font-size:15px}
+.bila-actions{display:flex;align-items:center;gap:10px}
+.bila-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);
+  background:#fff;color:var(--ink-2);font-weight:600;text-decoration:none;transition:transform .15s,box-shadow .2s,border-color .2s;}
+.bila-btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.06);border-color:#dfeae6}
+.bila-btn--primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+.bila-btn--primary:hover{filter:brightness(1.05)}
+.bila-hero{max-width:1200px;margin:28px auto 14px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.bila-hero-left{display:flex;align-items:center;gap:14px}
+.bila-hero-left img{height:54px;width:auto;object-fit:contain}
+.bila-hero-title{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:.2px}
+.bila-hero-sub{font-size:13px;color:var(--muted);margin-top:2px}
+.bila-hero-right{flex:1;display:flex;justify-content:flex-end}
+.bila-search{position:relative;flex:1;max-width:560px}
+.bila-search input{width:100%;padding:12px 44px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink-2);
+  outline:none;transition:border-color .2s,box-shadow .2s}
+.bila-search input:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--ring)}
+.bila-search .icon{position:absolute;left:14px;top:0;bottom:0;display:flex;align-items:center;pointer-events:none}
+.bila-divider{height:1px;background:var(--line);margin:14px 0 6px}
+.bila-frame{max-width:1200px;margin:0 auto 26px;padding:0 16px}
+#dynamic-content{margin-top:12px}
+.kategori{width:100%}
+.kategori-header{background:#fff !important;color:var(--ink) !important;border:1px solid var(--line) !important;border-radius:12px !important;
+  padding:12px 16px !important;font-weight:750 !important;letter-spacing:.2px;box-shadow:0 10px 18px rgba(0,0,0,.04) !important}
+.kategori-header .ok{color:var(--brand) !important;font-weight:800}
+.kategori-header:hover{border-color:#D8E9E3 !important;box-shadow:0 14px 24px rgba(0,0,0,.06) !important}
+.urunler{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.urun{background:#fff !important;border:1px solid var(--line) !important;border-radius:14px !important;box-shadow:0 10px 18px rgba(0,0,0,.05) !important;
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;padding:12px !important;cursor:pointer}
+.urun:hover{transform:translateY(-3px);border-color:#DDEAE5 !important;box-shadow:0 16px 24px rgba(0,0,0,.07) !important}
+.urun img{width:100%;height:180px;object-fit:contain;border-radius:12px;background:#FAFAFA}
+.urun p{color:var(--ink) !important;margin:6px 0 0}
+.urun p:nth-of-type(2){color:#667872 !important}
+.urun p:nth-of-type(3){color:var(--brand) !important;font-weight:800 !important}
+#product-modal-root > div > div{background:#fff !important}
+#product-modal-root h2{color:var(--ink)} #product-modal-root h4{color:#6c7a76}
+@media (max-width:900px){.bila-hero{flex-direction:column;align-items:stretch;gap:10px}.bila-hero-left{justify-content:center}.bila-hero-right{justify-content:center}}
+@media (max-width:768px){.bila-title{display:none}.bila-brand img{height:32px}.bila-hero-left img{height:48px}.urun img{height:150px}}
