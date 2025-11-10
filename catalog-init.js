@@ -1,8 +1,8 @@
 
-// ===== Bila Tarım — Corporate Premium Init (V2-A) =====
+// ===== Bila Tarım — Corporate Premium V2-A.1 (No Admin Button) =====
 (function(){
   try {
-    // Hide legacy bars to avoid double-header
+    // Hide legacy bars to avoid layered headers
     document.querySelectorAll('.header, .topbar, .logo-bar').forEach(el => el.style.display='none');
 
     if(!document.querySelector('.bila-header')){
@@ -17,18 +17,17 @@
       const title = document.createElement('div'); title.className='bila-title'; title.textContent='Bila Tarım Katalog';
       brand.appendChild(logo); brand.appendChild(title);
 
-      // Actions
+      // Actions (remove Admin Panel button per request)
       const actions = document.createElement('div'); actions.className='bila-actions';
-      const login = document.createElement('a'); login.href='login.html'; login.className='bila-btn'; login.textContent='Giriş';
-      const admin = document.createElement('a'); admin.href='admin.html'; admin.className='bila-btn bila-btn--primary'; admin.textContent='Admin Panel';
-      actions.appendChild(login); actions.appendChild(admin);
+      const login = document.createElement('a'); login.href='login.html'; login.className='bila-btn bila-btn--ghost'; login.textContent='Giriş';
+      actions.appendChild(login);
 
       header.appendChild(brand); header.appendChild(actions);
 
-      // HERO
+      // HERO with search
       const hero = document.createElement('div'); hero.className='bila-hero';
       const left = document.createElement('div'); left.className='bila-hero-left';
-      const heroLogo = logo.cloneNode(true); heroLogo.style.height='54px';
+      const heroLogo = logo.cloneNode(true); heroLogo.style.height='56px';
       const leftText = document.createElement('div');
       const t1 = document.createElement('div'); t1.className='bila-hero-title'; t1.textContent='Ürün Kataloğu';
       const t2 = document.createElement('div'); t2.className='bila-hero-sub'; t2.textContent='Hızlı arama · Net kategori yapısı · Kurumsal görünüm';
@@ -43,9 +42,7 @@
       searchWrap.appendChild(icon); searchWrap.appendChild(input);
       right.appendChild(searchWrap);
 
-      hero.appendChild(left); hero.appendChild(right);
-
-      // FRAME + dynamic content
+      // Frame + dynamic content
       const frame = document.createElement('div'); frame.className='bila-frame';
       let dyn = document.getElementById('dynamic-content'); if(!dyn){ dyn = document.createElement('div'); dyn.id='dynamic-content'; }
 
@@ -54,7 +51,7 @@
       document.body.innerHTML='';
       document.body.appendChild(header);
       document.body.appendChild(hero);
-      const div = document.createElement('div'); div.className='bila-divider'; document.body.appendChild(div);
+      const divider = document.createElement('div'); divider.className='bila-divider'; document.body.appendChild(divider);
       frame.appendChild(dyn);
       prev.forEach(n => {
         if(n.tagName && n.tagName.toLowerCase()==='script') return;
@@ -65,5 +62,5 @@
       });
       document.body.appendChild(frame);
     }
-  } catch(e){ console.warn('Catalog V2-A init error', e); }
+  } catch(e){ console.warn('Catalog V2-A.1 init error', e); }
 })();
